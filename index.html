@@ -1,0 +1,381 @@
+<!doctype html><meta charset=utf-8>
+<title>DeepLight: Learning Illumination for Unconstrained Mobile Mixed Reality</title>
+
+<style>
+    body {
+      font-family: Roboto, "Roboto", sans-serif;
+      background: #F0F0F0;
+      color: #696969;
+      padding: 0px 40px 40px 40px;
+    }
+    h1 { 
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h2 { 
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h3 { 
+        display: block;
+        font-size: 1em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        }
+    h4 { 
+        display: block;
+        font-size: 1.4em;
+        margin-top: 0.0em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h5 { 
+        display: block;
+        font-size: .75em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        width: 80px;
+        height: 30px;
+        }
+    h6 { 
+        display: block;
+        font-size: .75em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        }
+    img {
+      margin: 0px 10px 10px 0;
+    }
+    .img {
+      box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
+      margin: 0px 10px 10px 0;
+    }
+    .logos {
+      margin: 0px 10px 10px 0;
+    }
+    .ib {
+    display: inline-block;
+    margin: 00px 00px 00px 0px;
+    width: 90px;
+    height: 190px;
+    }
+    .exampleImages {
+    display: inline-block;
+    float: center;
+    margin: 0px 20px 0px 0px;
+    width: 90px;
+    height: 160px;
+    }
+    .footer {
+	margin: 20px 0px 50px 0px;
+    width: 100%;
+    height: 100px;
+    float: center;
+	position: relative;
+    min-width: 800px;
+    }
+    .footerG {
+	margin: 20px 0px 0px 0px;
+    width: 200px;
+    height: 100px;
+    float: left;
+	position: relative;
+    }
+    .footerD {
+	margin: 20px 100px 0px 0px;
+    width: 300px;
+    height: 100px;
+    float: right;
+	position: relative;
+    }
+    .main {
+	margin: 20px 80px 50px 0px;
+    width: 100%;
+    max-width: 1000px;
+    float: left;
+	position: relative;
+    }
+    .superhero {
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    position: relative;
+    min-width: 800px;
+    }
+    .title {
+	margin: 50px 0px 0px 0px;
+    width: 400px;
+    height: 500px;
+    float: left;
+	position: relative;
+    }
+    .paper {
+	margin: 150px 100px 0px 0px;
+    width: 200px;
+    height: 500px;
+    float: right;
+	position: relative;
+    }
+    h1.name {
+	font-size: 40px;
+	font-weight: 300;
+    margin-bottom: 10px;
+	display: inline-block;
+    }
+    .email {
+	display: block;
+	font-size: 19px;
+	font-weight: 300;
+	color: #81899C;
+	margin-top: 0px;
+    display: inline-block;
+    }
+
+    .lead {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 30px;
+    display: inline-block;
+    }
+    .names {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 20px;
+    display: inline-block;
+    }
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    }
+    .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    a.pagelink:link,
+    a.pagelink:visited,
+    a.pagelink:active { color: #81899C; text-decoration: none; }
+    a.pagelink:hover { color: #006699; text-decoration: underline; }
+</style>
+
+<div class="superhero">
+    <div class="title">
+        <h1 class="name"><strong>DeepLight</strong><br>Learning Illumination for Unconstrained Mobile Mixed Reality</h1><br>
+        <h2 class="names">Chloe LeGendre</h2>
+        <span class="email"><a href = "mailto: chlobot@google.com" class="pagelink">chlobot@google.com</a></span><br>
+        
+        <h2 class="names">Wan-Chun Ma</h2>
+        <span class="email"><a href = "mailto: nitroboy@google.com" class="pagelink"> nitroboy@google.com</a></span><br>
+        
+        <h2 class="names">Graham Fyffe</h2>
+        <span class="email"><a href = "mailto: fyffe@google.com" class="pagelink">fyffe@google.com</a></span><br>
+        
+        <h2 class="names">John Flynn</h2>
+        <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span><br>
+        
+        <h2 class="names">Laurent Charbonnel</h2>
+        <span class="email"><a href = "mailto: lcharbonnel@google.com" class="pagelink">lcharbonnel@google.com</a></span><br>
+        
+        <h2 class="names">Jay Busch</h2>
+        <span class="email"><a href = "mailto: jbusch@google.com" class="pagelink">jbusch@google.com</a></span><br>
+        
+        <h2 class="names">Paul Debevec</h2>
+        <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span><br>
+        
+        <h4>Google Inc.</h4>
+    </div>
+    
+    <div class="paper">
+        <a href="content/DeepLight_Paper.pdf"><img src="thumbs/paper.png" class="img" style="width:300px;height:373px;"></a> Click to view the paper.
+    </div>
+</div>
+
+<div class="main">
+    <h2>Publication Links</h2>
+    Paper
+    <a href="content/DeepLight_Paper.pdf">PDF</a>.<br>
+    Supplemental
+    <a href="content/DeepLight_Supplemental.pdf">PDF</a>.<br>
+    Poster
+    <a href="content/poster/CVPR_Poster.pdf">PDF</a>.<br>
+    Network diagram
+    <a href="content/NetworkArch_Diam_v04.pdf">PDF</a>.<br>
+    Testing Data from our paper coming soon.
+</div>
+
+<div class="main">
+    <h2>Abstract</h2>
+    We present a learning-based method to infer plausible high dynamic range (HDR), omnidirectional illumination given an unconstrained, low dynamic range (LDR) image from a mobile phone camera with a limited field of view (FOV). For training data, we collect videos of various reflective spheres placed within the camera's FOV, leaving most of the background unoccluded, leveraging that materials with diverse reflectance functions reveal different lighting cues in a single exposure. We train a deep neural network to regress from the LDR background image to HDR lighting by matching the LDR ground truth sphere images to those rendered with the predicted illumination using image-based relighting, which is differentiable. Our inference runs at interactive frame rates on a mobile device, enabling realistic rendering of virtual objects into real scenes for mobile mixed reality. Training on automatically exposed and white-balanced videos, we improve the realism of rendered objects compared to the state-of-the art methods for both indoor and outdoor scenes.  
+</div>
+
+
+
+<div class="main">
+    <h2>Example Images</h2>
+    Some images from the paper in higher resolution<br>
+    <p>
+    <center><h6>Example 01 Diffuse</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/03/cleanplate0_0001.jpg"><img src="content/bunny/03/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/diffuse_bunny0_0001.jpg"><img src="content/bunny/03/diffuse_bunny0_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div>  
+        
+        <div class=ib><a href="content/bunny/03/03_GT_CP_Diffuse_Bunny.jpg"><img src="content/bunny/03/03_GT_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/03_DL_CP_Diffuse_Bunny.jpg"><img src="content/bunny/03/03_DL_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/03_LA_CP_Diffuse_Bunny.jpg"><img src="content/bunny/03/03_LA_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>Hold-Geoffroy et al</h5><br>
+        </div>
+    </center>
+        
+    <center><h6>Example 01 Metallic</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/03/cleanplate0_0001.jpg"><img src="content/bunny/03/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/mattesilver_bunny1_0001.jpg"><img src="content/bunny/03/mattesilver_bunny1_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div> 
+        
+        <div class=ib><a href="content/bunny/03/03_GT_CP_MS_Bunny.jpg"><img src="content/bunny/03/03_GT_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/03_DL_CP_MS_Bunny.jpg"><img src="content/bunny/03/03_DL_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/03/03_LA_CP_MS_Bunny.jpg"><img src="content/bunny/03/03_LA_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>Hold-Geoffroy et al</h5><br>
+        </div>
+    </center>
+    <center><h6>Example 02 Diffuse</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/05/cleanplate0_0001.jpg"><img src="content/bunny/05/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/diffuse_bunny0_0001.jpg"><img src="content/bunny/05/diffuse_bunny0_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div>  
+        
+        <div class=ib><a href="content/bunny/05/05_GT_CP_Diffuse_Bunny.jpg"><img src="content/bunny/05/05_GT_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/05_DL_CP_Diffuse_Bunny.jpg"><img src="content/bunny/05/05_DL_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/05_LA_CP_Diffuse_Bunny.jpg"><img src="content/bunny/05/05_LA_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>Hold-Geoffroy et al</h5><br>
+        </div>
+    </center>
+    <center><h6>Example 02 Metallic</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/05/cleanplate0_0001.jpg"><img src="content/bunny/05/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/mattesilver_bunny2_0001.jpg"><img src="content/bunny/05/mattesilver_bunny2_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div> 
+        
+        <div class=ib><a href="content/bunny/05/05_GT_CP_MS_Bunny.jpg"><img src="content/bunny/05/05_GT_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/05_DL_CP_MS_Bunny.jpg"><img src="content/bunny/05/05_DL_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/05/05_LA_CP_MS_Bunny.jpg"><img src="content/bunny/05/05_LA_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>Hold-Geoffroy et al</h5><br>
+        </div>
+    </center>
+        
+    <center><h6>Example 03 Diffuse</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/14/cleanplate0_0001.jpg"><img src="content/bunny/14/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/diffuse_bunny0_0001.jpg"><img src="content/bunny/14/diffuse_bunny0_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div>  
+        
+        <div class=ib><a href="content/bunny/14/14_GT_CP_Diffuse_Bunny.jpg"><img src="content/bunny/14/14_GT_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/14_DL_CP_Diffuse_Bunny.jpg"><img src="content/bunny/14/14_DL_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/14_LA_CP_Diffuse_Bunny.jpg"><img src="content/bunny/14/14_LA_CP_Diffuse_Bunny.jpg" class="exampleImages"></a><br><h5>Gardner et al</h5><br>
+        </div>
+    </center>
+    <center><h6>Example 03 Metallic</h6></center>
+    <center>
+        <div class=ib><a href="content/bunny/14/cleanplate0_0001.jpg"><img src="content/bunny/14/cleanplate0_0001.jpg" class="exampleImages"></a><br><h5>unseen input</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/mattesilver_bunny1_0001.jpg"><img src="content/bunny/14/mattesilver_bunny1_0001.jpg" class="exampleImages"></a><br><h5>real object</h5><br>
+        </div> 
+        
+        <div class=ib><a href="content/bunny/14/14_GT_CP_MS_Bunny.jpg"><img src="content/bunny/14/14_GT_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ground truth HDR IBL</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/14_DL_CP_MS_Bunny.jpg"><img src="content/bunny/14/14_DL_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>ours</h5><br>
+        </div>
+        
+        <div class=ib><a href="content/bunny/14/14_LA_CP_MS_Bunny.jpg"><img src="content/bunny/14/14_LA_CP_MS_Bunny.jpg" class="exampleImages"></a><br><h5>Gardner et al</h5><br>
+        </div>
+    </center>
+</div>
+
+
+
+<div class="main">
+    <h2 class="section-title">DeepLight at work</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/ecim4DrZTUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> 
+    <br>
+    Google I/O Conference: Increasing AR Realism with Lighting with Wan-Chun Ma, Konstantine Tsotsos 
+    <p>
+</div>
+
+
+<div class="main">
+    <h2>Links</h2>
+    Environmental HDR in ARCore 
+    <a href="https://developers.google.com/ar/develop/java/light-estimation/">API</a>.
+    <br><br><br>
+</div>
+<br>
+
+<div class="footer">
+    <div class="footerG">
+        <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+    </div>
+    <div class="footerD">
+        <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
+    </div>
+</div>
