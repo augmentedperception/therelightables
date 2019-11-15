@@ -1,19 +1,19 @@
 <!doctype html><meta charset=utf-8>
-<title>The Relightables: Volumetric Performance Capture of Humans with
-Realistic Relighting</title>
+<title>The Relightables: Volumetric Performance Capture of Humans with Realistic Relighting</title>
 
 <style>
     body {
       font-family: Roboto, "Roboto", sans-serif;
       background: #F0F0F0;
       color: #696969;
-      padding: 0px 40px 40px 40px;
+      /* text-align: center; */
+      /* padding: 0px 40px 40px 40px; */
     }
     h1 { 
         display: block;
         font-size: 2em;
         margin-top: 0.67em;
-        margin-bottom: 0.67em;
+        margin-bottom: 0px;
         margin-left: 0;
         margin-right: 0;
         font-weight: normal;
@@ -40,7 +40,7 @@ Realistic Relighting</title>
         }
     h4 { 
         display: block;
-        font-size: 1.4em;
+        font-size: 1.1em;
         margin-top: 0.0em;
         margin-bottom: 0.67em;
         margin-left: 0;
@@ -48,98 +48,108 @@ Realistic Relighting</title>
         font-weight: normal;
         color: #000;
         }
-    h5 { 
-        display: block;
-        font-size: .75em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        width: 80px;
-        height: 30px;
-        }
-    h6 { 
-        display: block;
-        font-size: .75em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        }
-    img {
-      margin: 0px 10px 10px 0;
+    hr {
+        border-top: 1px solid black;
     }
-    .img {
+    .first-letter {
+        font-weight: 350;
+        display: inline;
+        font-size: 1.75em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .paper-thumbnail {
       box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
-      margin: 0px 10px 10px 0;
+      width: 230px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        text-align: center;
+        margin: 0px -10px 0px -10px;
+    }
+    .grid-container > div {
+        text-align: center;
     }
     .logos {
       margin: 0px 10px 10px 0;
     }
     .ib {
-    display: inline-block;
-    margin: 00px 00px 00px 0px;
-    width: 90px;
-    height: 190px;
+      display: inline-block;
+      margin: 00px 20px 20px 0px;
     }
-    .exampleImages {
-    display: inline-block;
-    float: center;
-    margin: 0px 20px 0px 0px;
-    width: 90px;
-    height: 160px;
-    }
-    .footer {
+    .logos-container {
 	margin: 20px 0px 50px 0px;
     width: 100%;
-    height: 100px;
-    float: center;
+    float: left;
 	position: relative;
     min-width: 800px;
     }
-    .footerG {
+    .google-logo {
+    text-align: center;
+	position: relative;
+    }
+
+    .video {
 	margin: 20px 0px 0px 0px;
-    width: 200px;
-    height: 100px;
+    width: 100%;
     float: left;
 	position: relative;
     }
-    .footerD {
-	margin: 20px 100px 0px 0px;
-    width: 300px;
-    height: 100px;
-    float: right;
+    .abstract {
+	margin: 50px 0px 0px 0px;
+    width: 100%;
+    float: left;
 	position: relative;
     }
-    .main {
-	margin: 20px 80px 50px 0px;
+    .data {
+	margin: 40px 0px 80px 0px;
     width: 100%;
-    max-width: 1000px;
     float: left;
 	position: relative;
     }
     .superhero {
-    width: 100%;
-    max-width: 1000px;
-    height: 600px;
+    width: 1024px;
     position: relative;
-    min-width: 800px;
+    margin: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    overflow: auto;
+    /* min-width: 800px; */
     }
     .title {
 	margin: 50px 0px 0px 0px;
-    width: 400px;
-    height: 500px;
+    width: 100%;
+    float: left;
+	position: relative;
+    text-align: center;
+    /* line-height: 40pt; */
+    }
+    .title-line {
+        margin: 20px 0px 20px 0px;
+    }
+    .authors {
+	/* margin: 25px 0px 0px 0px; */
+    /* width: 400px;
+    height: 1100px; */
+    padding-left: 15%;
+    padding-right: 15%;
+    float: left;
+	position: relative;
+    text-align: center;
+    }
+    .paper {
+    width: 100%;
     float: left;
 	position: relative;
     }
-    .paper {
-	margin: 150px 100px 0px 0px;
-    width: 200px;
-    height: 500px;
-    float: right;
-	position: relative;
+    h1.title-name {
+	font-size: 40px;
+	font-weight: 300;
+    margin-bottom: 0px;
+	display: inline-block;
     }
     h1.name {
 	font-size: 40px;
@@ -164,11 +174,12 @@ Realistic Relighting</title>
     display: inline-block;
     }
     .names {
-	font-size: 20px;
+    font-size: 1.05em;
 	font-weight: 300;
 	margin-top: 0px;
-	line-height: 20px;
+	line-height: 20pt;
     display: inline-block;
+    text-align: center;
     }
     .video-container {
     position: relative;
@@ -182,45 +193,100 @@ Realistic Relighting</title>
     width: 100%;
     height: 100%;
     }
+    .footer {
+        width: 100%;
+        height: 65px;
+        float: left;
+        margin-top: 25px;
+    }
+    .footer-googleai {
+        width: 20%;
+        float: left;
+    }
+    .footer-google {
+        width: 20%;
+        float: right;
+        text-align: right;
+    }
     a.pagelink:link,
     a.pagelink:visited,
     a.pagelink:active { color: #81899C; text-decoration: none; }
     a.pagelink:hover { color: #006699; text-decoration: underline; }
 </style>
 
+<body>
 <div class="superhero">
     <div class="title">
-        <h1 class="name" style="width: 100%;"><strong>The Relightables:</strong><br> Volumetric Performance Capture of Humans with
-Realistic Relighting</h1><br>
-        <h2 class="names">Kaiwen Guo, Peter Lincoln, Philip Davidson, Jay Busch, Xueming Yu, Matt Whalen, Geoff Harvey, Sergio Orts-Escolano, Rohit Pandey, Jason Dourgarian, Danhang Tang, Anastasia Tkach, Adarsh Kowdle, Emily Cooper, Mingsong Dou, Sean Fanello, Graham Fyffe, Christoph Rhemann, Jonathan Taylor, Paul Debevec, and Shahram Izadi</h2>            
+        <h1 class="title-name"><strong>The Relightables:</strong></h1>
+        <h2>Volumetric Performance Capture of Humans with Realistic Relighting</h2>
+        <div class="title-line">
+            <hr style = "width: 32%;">
+        </div>
+    </div>
+    <div class ="authors">
+        <h2 class="names">Kaiwen Guo, Peter Lincoln, Philip Davidson, Jay Busch, Xueming Yu, Matt Whalen,<br>Geoff Harvey, Sergio Orts-Escolano, Rohit Pandey, Jason Dourgarian, Danhang Tang, Anastasia Tkach, Adarsh Kowdle, Emily Cooper, Mingsong Dou, Sean Fanello,<br>Graham Fyffe, Christoph Rhemann, Jonathan Taylor, Paul Debevec, and Shahram Izadi</h2>
         <h4>Google Inc.</h4>
+    </div>
+
+    <div class="logos-container">
+        <div class="google-logo">
+            <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+        </div>
+
     </div>
     
     <div class="paper">
-        <a href="content/TheRelightables_Paper.pdf"><img src="thumbs/paper.png" class="img" style="width:300px;height:373px;"></a> Paper coming soon.
+        <div class="grid-container">
+            <div class="item1"><a href="relightables_paper.pdf"><img src="thumbs/relightables_paper-1.jpg" class="paper-thumbnail"></a></div>
+            <div class="item2"><a href="relightables_paper.pdf"><img src="thumbs/relightables_paper-4.jpg" class="paper-thumbnail"></a></div>
+            <div class="item3"><a href="relightables_paper.pdf"><img src="thumbs/relightables_paper-9.jpg" class="paper-thumbnail"></a></div>
+            <div class="item4"><a href="relightables_paper.pdf"><img src="thumbs/relightables_paper-14.jpg" class="paper-thumbnail"></a></div>
+        </div>
+        <br>
+        Click to view the paper.
     </div>
-</div>
 
-<div class="main">
-    <h2>Publication Links</h2>
-    Paper [Coming Soon]
-    <a href="content/TheRelightables_Paper.pdf">PDF</a>.<br>
-    Data [Coming Soon]
-    <a href="content/data.zip">zip</a>.<br>
-</div>
-
-<div class="main">
-    <h2>Abstract</h2>
-   We present ``The Relightables'', a volumetric capture system for photorealistic and high quality relightable full-body performance capture. While significant progress has been made on volumetric capture systems, focusing on 3D geometric reconstruction with high resolution textures, much less work has been done to recover photometric properties needed for relighting. Results from such systems lack high-frequency details and the subject's shading is prebaked into the texture. In contrast, a large body of work has addressed relightable acquisition for image-based approaches, which photograph the subject under a set of basis lighting conditions and recombine the images to show the subject as they would appear in a target lighting environment. However, to date, these approaches have not been adapted for use in the context of a high-resolution volumetric capture system. Our method combines this ability to realistically relight humans for arbitrary environments, with the benefits of free-viewpoint volumetric capture and new levels of geometric accuracy for dynamic performances. Our subjects are recorded inside a custom geodesic sphere outfitted with 331 custom color LED lights, an array of high-resolution cameras, and a set of custom high-resolution depth sensors. Our system innovates in multiple areas: First, we designed a novel active depth sensor to capture 12.4MP depth maps, which we describe in detail. Second, we show how to design a hybrid geometric and machine learning reconstruction pipeline to process the high resolution input and output a volumetric video. Third, we generate temporally consistent reflectance maps for dynamic performers by leveraging the information contained in two alternating color gradient illumination images acquired at 60Hz. Multiple experiments, comparisons, and applications show that The Relightables significantly improves upon the level of realism in placing volumetrically captured human performances into arbitrary CG scenes. 
-</div>
-
-
-
-<div class="footer">
-    <div class="footerG">
-        <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+    <div class="abstract">
+        <h2>Abstract</h2>
+            <p style="text-align: justify;">
+            <span class="first-letter">W</span>e present "The Relightables", a volumetric capture system for photorealistic and high quality relightable full-body performance capture. While significant progress has been made on volumetric capture systems, focusing on 3D geometric reconstruction with high resolution textures, much less work has been done to recover photometric properties needed for relighting. Results from such systems lack high-frequency details and the subject's shading is prebaked into the texture. In contrast, a large body of work has addressed relightable acquisition for image-based approaches, which photograph the subject under a set of basis lighting conditions and recombine the images to show the subject as they would appear in a target lighting environment. However, to date, these approaches have not been adapted for use in the context of a high-resolution volumetric capture system. Our method combines this ability to realistically relight humans for arbitrary environments, with the benefits of free-viewpoint volumetric capture and new levels of geometric accuracy for dynamic performances. Our subjects are recorded inside a custom geodesic sphere outfitted with 331 custom color LED lights, an array of high-resolution cameras, and a set of custom high-resolution depth sensors. Our system innovates in multiple areas: First, we designed a novel active depth sensor to capture 12.4MP depth maps, which we describe in detail. Second, we show how to design a hybrid geometric and machine learning reconstruction pipeline to process the high resolution input and output a volumetric video. Third, we generate temporally consistent reflectance maps for dynamic performers by leveraging the information contained in two alternating color gradient illumination images acquired at 60Hz. Multiple experiments, comparisons, and applications show that The Relightables significantly improves upon the level of realism in placing volumetrically captured human performances into arbitrary CG scenes.
+            </p>
     </div>
-    <div class="footerD">
-        <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
+
+    <div class="video">
+            <h2 class="section-title">Videos</h2>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/anBRroZWfzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> 
+            <br>
+            The Relightables Volumetric Capture System
+
+            <div class="video-container" style="margin-top: 50px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fj8n76shZ_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> 
+            <br>
+            SIGGRAPH Asia 2019 Technical Video
     </div>
+
+
+    <div class="footer">
+        <hr style = "margin-bottom: 15px;">
+        <div class="footer-googleai">
+            <a href="https://ai.google" class="pagelink"><b>Google AI</b></a>
+        </div>
+        <div class="footer-google">
+            <a href="https://google.com" class="pagelink"><b>Google</b></a>
+        </div>
+    </div>
+
 </div>
+
+
+
+
+
+
+</body>
+
+
+
